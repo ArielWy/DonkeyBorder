@@ -1,0 +1,4 @@
+name: DonkeyBorder
+version: '${project.version}'
+main: me.olios.plugins.donkeyborder.DonkeyBorder
+api-version: 1.20
