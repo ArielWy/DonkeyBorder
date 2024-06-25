@@ -3,6 +3,9 @@ version: '${project.version}'
 main: me.olios.plugins.donkeyborder.DonkeyBorder
 api-version: 1.20
 commands:
-  donkey:
+  setborder:
+    aliases:
+      - setb
+      - sb
     usage: /<command>
     description: set the border

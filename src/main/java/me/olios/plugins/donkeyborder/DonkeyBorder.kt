@@ -19,7 +19,7 @@ class DonkeyBorder : JavaPlugin() {
     }
 
     private fun registerCommands() {
-        getCommand("donkey")?.setExecutor(SetBorderCommand(this))
+        getCommand("setborder")?.setExecutor(SetBorderCommand(this))
     }
 
     private fun saveDonkeyUUID() {
