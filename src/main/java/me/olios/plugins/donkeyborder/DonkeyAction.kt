@@ -30,6 +30,7 @@ class DonkeyAction(private val player: Player, private val plugin: DonkeyBorder)
         DonkeyBorder.donkey = donkey // define the donkey in the plugin
 
         TickHandler(plugin).tickUpdate() // update every certain ticks
+        BorderSize(plugin).initialBorderRadius()  // initial the border radius
 
         player.sendMessage("§aSummon the donkey and reset the border")  // send a message to the player
     }

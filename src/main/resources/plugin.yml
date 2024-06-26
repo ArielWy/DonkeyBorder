@@ -8,4 +8,10 @@ commands:
       - setb
       - sb
     usage: /<command>
-    description: set the border
+    description: set the border and summoned the Donkey
+
+    tpdonkey:
+      aliases:
+        - tpd
+      usage: /<command>
+      description: teleport the player to the Donkey location

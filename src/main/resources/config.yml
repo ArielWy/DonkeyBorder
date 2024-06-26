@@ -3,4 +3,5 @@
 General:
   Active: false
   UpdateDelayTicks: 20
+  BorderRadius: 20.0  # per player
   IcePathRadius: 2

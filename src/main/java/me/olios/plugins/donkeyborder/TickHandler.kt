@@ -16,8 +16,10 @@ class TickHandler(private val plugin: DonkeyBorder) {
         val ticksDelay: Long = config.getLong("General.UpdateDelayTicks")
         object : BukkitRunnable() {
             override fun run() {
-                if (DonkeyBorder.donkey == null || !donkey.isValid)
+                if (DonkeyBorder.donkey == null || donkey.isDead) {
+                    println("§a${DonkeyBorder.donkey}, ${donkey.isValid}")
                     cancel()
+                }
 
                 borderUpdate()  // update the border
                 onSurface()  // teleport if not on the surface
@@ -40,7 +42,7 @@ class TickHandler(private val plugin: DonkeyBorder) {
         val donkeyY = donkeyLocation.blockY
         val highestY = highestLocation.blockY
 
-        if (donkey.isOnGround && donkeyY != highestY)
+        if (!donkey.isOnGround && donkeyLocation.block.isSolid && donkeyY != highestY)
             Bukkit.getScheduler().runTask(plugin, Runnable { donkey.teleport(highestLocation) })
     }
 

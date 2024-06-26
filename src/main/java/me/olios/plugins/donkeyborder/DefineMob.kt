@@ -38,6 +38,7 @@ class DefineMob(private val plugin: DonkeyBorder): Listener {
             if (donkey != null) {
                 DonkeyBorder.donkey = donkey  // Define the donkey in the plugin
                 TickHandler(plugin).tickUpdate() // update every certain ticks
+                BorderSize(plugin).initialBorderRadius()  // initial the border size
             } else {
                 DonkeyBorder.donkey = null  // The mob is no longer in the world or doesn't exist
             }
