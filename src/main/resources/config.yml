@@ -1,3 +1,6 @@
 # DonkeyBorder Configuration File
-Active: false
-donkeyUUID:
+
+General:
+  Active: false
+  UpdateDelayTicks: 20
+  IcePathRadius: 2
