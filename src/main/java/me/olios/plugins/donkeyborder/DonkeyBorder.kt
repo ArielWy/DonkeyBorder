@@ -1,5 +1,6 @@
 package me.olios.plugins.donkeyborder
 
+import me.olios.plugins.donkeyborder.commands.DonkeyBorderCommand
 import me.olios.plugins.donkeyborder.commands.SetBorderCommand
 import me.olios.plugins.donkeyborder.commands.TeleportDonkeyCommand
 import me.olios.plugins.donkeyborder.listeners.PlayerJoinListener
@@ -24,6 +25,7 @@ class DonkeyBorder : JavaPlugin() {
     }
 
     private fun registerCommands() {
+        getCommand("donkeyborder")?.setExecutor(DonkeyBorderCommand(this))
         getCommand("setborder")?.setExecutor(SetBorderCommand(this))
         getCommand("tpdonkey")?.setExecutor(TeleportDonkeyCommand(this))
     }

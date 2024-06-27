@@ -1,7 +1,6 @@
-# DonkeyBorder Configuration File
-
+# config.yml
 General:
-  Active: false
-  UpdateDelayTicks: 20
-  BorderRadius: 20.0  # per player
-  IcePathRadius: 2
+  Active: true
+  UpdateDelayTicks: 20  # Check and update frequency (in ticks)
+  BorderRadius: 20.0    # Border radius per player (multiplied by online player count)
+  IcePathRadius: 2      # Radius of the donkey's ice path

@@ -3,15 +3,20 @@ version: '${project.version}'
 main: me.olios.plugins.donkeyborder.DonkeyBorder
 api-version: 1.20
 commands:
+  donkeyborder:
+    aliases:
+      - donkey
+      - db
+    usage: /<command>
+    description: the main command for the DonkeyBorder plugin
   setborder:
     aliases:
       - setb
       - sb
     usage: /<command>
     description: set the border and summoned the Donkey
-
-    tpdonkey:
-      aliases:
-        - tpd
-      usage: /<command>
-      description: teleport the player to the Donkey location
+  tpdonkey:
+    aliases:
+      - tpd
+    usage: /<command>
+    description: teleport the player to the Donkey location

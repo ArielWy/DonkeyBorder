@@ -32,12 +32,12 @@ class DonkeyAction(private val player: Player, private val plugin: DonkeyBorder)
         TickHandler(plugin).tickUpdate() // update every certain ticks
         BorderSize(plugin).initialBorderRadius()  // initial the border radius
 
-        player.sendMessage("§aSummon the donkey and reset the border")  // send a message to the player
+        player.sendMessage("§b[§6DonkeyBorder§b] §aSummon the donkey and reset the border")  // send a message to the player
     }
 
     private fun moveDonkey() {
         val donkey: Entity = DonkeyBorder.donkey!!
         Bukkit.getScheduler().runTask(plugin, Runnable { donkey.teleport(player.location) })
-        player.sendMessage("§9teleport the donkey to your location")
+        player.sendMessage("§b[§6DonkeyBorder§b] §9teleport the donkey to your location")
     }
 }

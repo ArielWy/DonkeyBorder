@@ -42,7 +42,7 @@ class TickHandler(private val plugin: DonkeyBorder) {
         val donkeyY = donkeyLocation.blockY
         val highestY = highestLocation.blockY
 
-        if (!donkey.isOnGround && donkeyLocation.block.isSolid && donkeyY != highestY)
+        if (donkey.isOnGround && donkeyY != highestY)
             Bukkit.getScheduler().runTask(plugin, Runnable { donkey.teleport(highestLocation) })
     }
 
