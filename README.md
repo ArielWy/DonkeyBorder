@@ -1,10 +1,10 @@
 # DonkeyBorder Plugin
 
-The **DonkeyBorder** plugin dynamically controls the world border based on the position of a special donkey in your Minecraft server. This donkey is quite extraordinary:
+The **DonkeyBorder** plugin dynamically controls the world border based on the location of a donkey in your Minecraft server. The donkey has some special abilities:
 
-1. **Invincibility**: The donkey cannot take damage or die. It's practically indestructible!
-2. **Surface Teleportation**: The donkey always stays above on the surface. Can't hide your donkeys anymore!
-3. **Frosted Ice Transformation**: When near water, the donkey turns it into frosted ice. 🧊
+1. **Invincibility**: The donkey can't take damage or die.
+2. **Surface Teleportation**: The donkey always stays on the surface.
+3. **Frost Walking**: When the donkey is near water, it turned into frosted ice. 🧊
 
 ## Installation
 
@@ -30,7 +30,7 @@ General:
   IcePathRadius: 2      # Radius of the donkey's ice path
 ```
 
-- `UpdateDelayTicks`: Determines how often the plugin checks and updates necessary features, including world border adjustments, ice path creation, and donkey positioning.
+- `UpdateDelayTicks`: decides how often the plugin checks and updates necessary features, including world border adjustments, ice path creation, and donkey location.
 - `BorderRadius`: Sets the initial border radius per player, which scales based on the number of online players.
 - `IcePathRadius`: Specifies the radius of the donkey's icy path.
 
