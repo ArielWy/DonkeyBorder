@@ -1,6 +1,6 @@
 # config.yml
 General:
-  Active: true
+  Active: true  # set 'False' to disable the plugin
   UpdateDelayTicks: 20  # Check and update frequency (in ticks)
   BorderRadius: 20.0    # Border radius per player (multiplied by online player count)
   IcePathRadius: 2      # Radius of the donkey's ice path

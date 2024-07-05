@@ -12,7 +12,12 @@ class TickHandler(private val plugin: DonkeyBorder) {
     private val donkey: Entity = DonkeyBorder.donkey!!
     private val config = plugin.config
 
+    private fun isActive(): Boolean {
+        return config.getBoolean("General.Active")
+    }
+
     fun tickUpdate() {
+        if (!isActive()) return
         val ticksDelay: Long = config.getLong("General.UpdateDelayTicks")
         object : BukkitRunnable() {
             override fun run() {
@@ -28,14 +33,14 @@ class TickHandler(private val plugin: DonkeyBorder) {
         }.runTaskTimer(plugin, ticksDelay, 10)  // run the task in a separate thread
     }
 
-    fun borderUpdate() {  // update the border center location
+    private fun borderUpdate() {  // update the border center location
         val world = donkey.world
         val donkeyLocation = donkey.location
 
         world.worldBorder.center = donkeyLocation // update the center
     }
 
-    fun onSurface() {
+    private fun onSurface() {
         val donkeyLocation = donkey.location
         val highestLocation = donkey.location.toHighestLocation().add(0.0, 1.0, 0.0)
 
@@ -46,7 +51,7 @@ class TickHandler(private val plugin: DonkeyBorder) {
             Bukkit.getScheduler().runTask(plugin, Runnable { donkey.teleport(highestLocation) })
     }
 
-    fun icePath() {
+    private fun icePath() {
         val radius: Int = config.getInt("General.IcePathRadius")
         val donkeyLocation = donkey.location
         val x: Int = donkeyLocation.blockX

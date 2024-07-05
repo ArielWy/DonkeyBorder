@@ -9,7 +9,12 @@ class BorderSize(private val plugin: DonkeyBorder) {
     private val config = plugin.config
     private val donkey: Entity? = DonkeyBorder.donkey
 
+    private fun isActive(): Boolean {
+        return config.getBoolean("General.Active")
+    }
+
     fun initialBorderRadius() {
+        if (!isActive()) return
         if (donkey !is Donkey) return
 
         val world = donkey.world
@@ -21,6 +26,7 @@ class BorderSize(private val plugin: DonkeyBorder) {
     }
 
     fun updateBorderRadius() {
+        if (!isActive()) return
         if (donkey !is Donkey) return
 
         val world = donkey.world
